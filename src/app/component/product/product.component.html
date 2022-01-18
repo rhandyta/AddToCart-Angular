@@ -1,0 +1,74 @@
+<div class="card-top container-fluid border">
+  <div class="container d-flex">
+    <div class="item">
+      <a>
+        <img
+          src="https://rukminim1.flixcart.com/flap/128/128/image/db4875975dc033aa.png?q=100"
+        />
+        <h6>All Products</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://rukminim1.flixcart.com/flap/128/128/image/9468f7c638007682.png?q=100"
+        />
+        <h6>Electronics</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://rukminim1.flixcart.com/flap/128/128/image/5c44091c4cde5527.png?q=100"
+        />
+        <h6>Fashion</h6>
+      </a>
+    </div>
+    <div class="item">
+      <a>
+        <img
+          src="https://rukminim1.flixcart.com/flap/128/128/image/d270faabceb32f09.png?q=100"
+        />
+        <h6>Grocery</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <ng-container *ngFor="let product of productsList">
+      <div class="card col-md-3">
+        <div class="text-center">
+          <img
+            class="text-center"
+            style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            "
+            src="{{ product.image }}"
+          />
+        </div>
+        <h5>
+          <strong>{{ product.title }}</strong>
+        </h5>
+        <p
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ product.description }}
+        </p>
+        <p>Price: ${{ product.price }}</p>
+        <button (click)="addtocart(product)" class="btn btn-primary">
+          Add to cart
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>
